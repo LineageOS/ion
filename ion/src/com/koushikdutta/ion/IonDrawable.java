@@ -259,21 +259,22 @@ class IonDrawable extends Drawable {
             if (info.bitmaps != null)
                 return info.bitmaps[0].getScaledWidth(resources.getDisplayMetrics().densityDpi);
         }
-        if (resizeWidth > 0)
-            return resizeWidth;
+        if (info == null) {
+            if (placeholder != null) {
+                return placeholder.getIntrinsicWidth();
+            } else if (placeholderResource != 0) {
+                Drawable d = resources.getDrawable(placeholderResource);
+                assert d != null;
+                return d.getIntrinsicWidth();
+            }
+        }
         if (info != null) {
             Drawable error = tryGetErrorResource();
             if (error != null)
                 return error.getIntrinsicWidth();
         }
-        if (placeholder != null) {
-            return placeholder.getIntrinsicWidth();
-        } else if (placeholderResource != 0) {
-            Drawable d = resources.getDrawable(placeholderResource);
-            assert d != null;
-            return d.getIntrinsicWidth();
-        }
-        return -1;
+
+        return resizeWidth > 0 ? resizeWidth : -1;
     }
 
     @Override
@@ -284,8 +285,15 @@ class IonDrawable extends Drawable {
             if (info.bitmaps != null)
                 return info.bitmaps[0].getScaledHeight(resources.getDisplayMetrics().densityDpi);
         }
-        if (resizeHeight > 0)
-            return resizeHeight;
+        if (info == null) {
+            if (placeholder != null) {
+                return placeholder.getIntrinsicHeight();
+            } else if (placeholderResource != 0) {
+                Drawable d = resources.getDrawable(placeholderResource);
+                assert d != null;
+                return d.getIntrinsicHeight();
+            }
+        }
         if (info != null) {
             if (error != null) {
                 return error.getIntrinsicHeight();
@@ -295,14 +303,7 @@ class IonDrawable extends Drawable {
                 return d.getIntrinsicHeight();
             }
         }
-        if (placeholder != null) {
-            return placeholder.getIntrinsicHeight();
-        } else if (placeholderResource != 0) {
-            Drawable d = resources.getDrawable(placeholderResource);
-            assert d != null;
-            return d.getIntrinsicHeight();
-        }
-        return -1;
+        return resizeHeight > 0 ? resizeHeight : -1;
     }
 
     public static final long FADE_DURATION = 200;
