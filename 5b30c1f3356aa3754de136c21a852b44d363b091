@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_78aa01d6",
+        "filename": "ion/src/com/koushikdutta/ion/IonDrawable.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 139
+      },
+      "writtenOn": "2014-06-03T10:47:28Z",
+      "side": 1,
+      "message": "Just return resize width? Throw an assertionError if something other than -1 is set.",
+      "revId": "5b30c1f3356aa3754de136c21a852b44d363b091",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
