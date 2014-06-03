@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_d8686dbd",
+        "filename": "ion/src/com/koushikdutta/ion/IonDrawable.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2014-06-03T10:39:49Z",
+      "side": 1,
+      "message": "Can\u0027t this block be moved up into the first not null check?",
+      "revId": "529d1aeacdb359b065f9369029a98b6437f75044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_b865b9e2",
+        "filename": "ion/src/com/koushikdutta/ion/IonDrawable.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2014-06-03T10:39:49Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "529d1aeacdb359b065f9369029a98b6437f75044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
