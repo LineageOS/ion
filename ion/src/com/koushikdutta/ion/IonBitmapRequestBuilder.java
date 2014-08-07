@@ -53,6 +53,7 @@ class IonBitmapRequestBuilder implements Builders.IV.F, ImageViewFutureBuilder, 
     boolean disableFadeIn;
     boolean animateGif = true;
     boolean deepZoom;
+    boolean noTransformCache;
 
     void reset() {
         placeholderDrawable = null;
@@ -199,6 +200,7 @@ class IonBitmapRequestBuilder implements Builders.IV.F, ImageViewFutureBuilder, 
         ret.transforms = transforms;
         ret.animateGif = animateGif;
         ret.deepZoom = deepZoom;
+        ret.noTransformCache = noTransformCache;
 
         // see if this request can be fulfilled from the cache
         if (!builder.noCache) {
@@ -422,6 +424,12 @@ class IonBitmapRequestBuilder implements Builders.IV.F, ImageViewFutureBuilder, 
             throw new IllegalStateException("Can't deepZoom with transforms.");
         resizeWidth = 0;
         resizeHeight = 0;
+        return this;
+    }
+
+    @Override
+    public IonBitmapRequestBuilder noTransformCache() {
+        noTransformCache = true;
         return this;
     }
 }

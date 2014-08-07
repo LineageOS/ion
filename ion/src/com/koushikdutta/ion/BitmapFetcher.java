@@ -26,6 +26,7 @@ class BitmapFetcher implements IonRequestBuilder.LoadRequestCallback {
     int resizeHeight;
     boolean animateGif;
     boolean deepZoom;
+    boolean noTransformCache;
 
     private boolean fastLoad(String uri) {
         Ion ion = builder.ion;
@@ -95,7 +96,7 @@ class BitmapFetcher implements IonRequestBuilder.LoadRequestCallback {
         // make sure that the parent download isn't cancelled (empty list)
         // and also make sure there are waiters for this transformed bitmap
         if (ion.bitmapsPending.tag(bitmapKey) == null) {
-            ion.bitmapsPending.add(downloadKey, new TransformBitmap(ion, bitmapKey, downloadKey, transforms));
+            ion.bitmapsPending.add(downloadKey, new TransformBitmap(ion, bitmapKey, downloadKey, transforms, noTransformCache));
         }
     }
 
