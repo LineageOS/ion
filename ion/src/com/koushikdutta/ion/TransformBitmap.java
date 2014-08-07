@@ -116,6 +116,9 @@ class TransformBitmap extends BitmapCallback implements FutureCallback<BitmapInf
                 if (cache == null)
                     return;
                 File tempFile = cache.getTempFile();
+                if (tempFile == null) {
+                    return;
+                }
                 try {
                     FileOutputStream out = new FileOutputStream(tempFile);
                     Bitmap.CompressFormat format = info.bitmaps[0].hasAlpha() ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG;
