@@ -158,6 +158,13 @@ class IonRequestBuilder implements Builders.Any.B, Builders.Any.F, Builders.Any.
         return setHeader("Cache-Control", "no-cache");
     }
 
+    boolean noTransformCache;
+    @Override
+    public Builders.Any.B noTransformCache() {
+        noTransformCache = true;
+        return this;
+    }
+
     Multimap query;
     @Override
     public IonRequestBuilder addQuery(String name, String value) {

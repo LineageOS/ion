@@ -129,6 +129,12 @@ public interface RequestBuilder<F, R extends RequestBuilder, M extends Multipart
     public R noCache();
 
     /**
+     * Disable usage of the disk cache for this request
+     * @return
+     */
+    public R noTransformCache();
+
+    /**
      * Set whether this request will follow redirects
      */
     public R followRedirect(boolean follow);
