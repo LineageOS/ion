@@ -646,17 +646,17 @@ class IonDrawable extends LayerDrawable {
 
         final boolean DEBUG_ZOOM = false;
         if (info.bitmap != null) {
-            canvas.drawBitmap(info.bitmap, null, getBounds(), paint);
+            canvas.drawBitmap(info.bitmap, null, bounds, paint);
             if (DEBUG_ZOOM) {
                 paint.setColor(Color.RED);
                 paint.setAlpha(0x80);
-                canvas.drawRect(getBounds(), paint);
+                canvas.drawRect(bounds, paint);
                 paint.setAlpha(0xFF);
             }
         }
         else {
             paint.setColor(Color.BLACK);
-            canvas.drawRect(getBounds(), paint);
+            canvas.drawRect(bounds, paint);
         }
 
         int sampleSize = 1;
